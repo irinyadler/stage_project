@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=" stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700;900&display=swap" rel="stylesheet">
+	<title>Database</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<div class="main">
+				<div class="user">
+					<div class="user__name">Flavio</div>
+					<div class="user__img">
+						<img src="./img/support.png" alt="">
+					</div>
+				</div>
+				<div id="database" class="database">
+					<h1>Database aziendale</h1>
+				</div>
+				<div class="subtitle">
+					<p>Seleziona un'area di interesse per consultarla</p>
+				</div>
+				<div class="tabs">
+					<div class="tabs__items">
+						<a href="#tab_01" class="tabs__item"><span>Consultazione utenti</span> </a>
+						<a href="#tab_02" class="tabs__item"><span>Registrazione nuovo utente</span> </a>
+					</div>
+					<div class="tabs__body">
+						<div id="tab_01" class="tabs__block">
+							<table class="table" id="table">
+								<!--	<button class="del">Delete</button>-->
+								<thead>
+									<tr>
+										<th>Elimina</th>
+										<th>Nome</th>
+										<th>Cognome</th>
+										<th>Codice fiscale</th>
+										<th>Foto</th>
+									</tr>
+								</thead>
+								<tbody id="newData">
+									<!-- <tr>
+										<td> <button class="delete"></button></td>
+										<td>Mario</td>
+										<td>Rossi</td>
+										<td>RSSMRA85T10A562S</td>
+										<td><img class="img" src="./img/support.png" alt=""></td>
+									</tr> -->
+								</tbody>
+							</table>
+						</div>
+						<div id="tab_02" class="tabs__block">
+							<form name="form" id="form" action="#" class="form">
+								<div class="row__title">Dati personali</div>
+								<div class="row">
+									<div class="row__data">
+										<div class="row__item">
+											<label class="label" for="name">Nome*</label>
+											<input tabindex="1" class="input _req" type="text" id="name" name="name">
+										</div>
+										<div class="row__item">
+											<label class="label" for="cognome">Cognome*</label>
+											<input tabindex="2" class="input _req" type="text" id="cognome" name="cognome">
+										</div>
+										<div class="row__item">
+											<label class="label" for="codice">Codice Fiscale*</label>
+											<input tabindex="3" class="input _req _code" type="text" id="codice" name="codice">
+										</div>
+									</div>
+									<div class="mini-row">
+										<label class="label" for="radio">Genere*</label>
+										<div class="item__options">
+											<input class="input__options _req" tabindex="4" type="radio" id="masc" name="sesso"
+												value="maschio">
+											<label class="label__options gen" name="gen" for="masc"><span>Maschio</span></label>
+										</div>
+										<div class="item__options">
+											<input class="input__options" tabindex="4" type="radio" id="fem" name="sesso" required
+												value="femmina" checked>
+											<label class="label__options gen" name="gen" for="fem"><span>Femmina</span></label>
+										</div>
+									</div>
+									<div class="row__data">
+										<div class="row__item">
+											<label class="label" for="data">Data di nascita*</label>
+											<input tabindex="5" class="input _req" type="date" id="data" name="data" onchange="calcAge()">
+										</div>
+										<div class="row__item">
+											<label class="label" for="eta">Età*</label>
+											<input tabindex="6" class="input _req" type="number" id="eta" name="eta">
+										</div>
+									</div>
+								</div>
+								<div class="row__title">Dati aziendali</div>
+								<div class="row">
+									<div class="row__item">
+										<label class="label" for="role">Mansione*</label>
+										<select class="input _req" name="mansione" tabindex="7" id="role">
+											<option class="option" value="Apprendistato"> Apprendistato</option>
+											<option class="option" value="tempoD"> <span class="span"> Tempo determinato</span>
+											</option>
+											<option class="option" value="tempoI">Tempo indeterminato</option>
+											<option class="option" value="Manager">Manager</option>
+										</select>
+									</div>
+								</div>
+								<div class="row__title">Credenziali</div>
+								<div class="row">
+									<div class="row__item">
+										<label class="label" for="email">Mail*</label>
+										<input tabindex="8" class="input _req _email" type="email" id="email" name="email">
+										<label class="label" for="pass">Password*</label>
+										<input tabindex="9" class="input _req" type="password" id="pass" name="pass">
+									</div>
+								</div>
+								<div class="buttons">
+									<button class="send" type="submit" id="submit" name="submit">Aggiungi</button>
+									<button class="reset" type="button" name="btn">Reset</button>
+								</div>
+								<div class="errore"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup" class="popup">
+		<div class="popup__body">
+			<div class="popup__content">
+				<div id="popup__close" onclick="popupClose()" class="popup__close">X</div>
+				<div class="popup__title">scheda di profilo</div>
+				<div class="popup__text"></div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+	<script src="js/form.js"></script>
+</body>
+
+</html>
